@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&family=Palanquin:wght@200;300;400;500;700&family=Staatliches&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #4A4E69;
+  --grey: #8E9AAF;
+  --dark-pink: #CBC0D3;
+  --pink: #CBC0D3;
+  --main-bg: #EFF1FF;
+  --product-name-bg: #FEEAFA;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0;
+  background: var(--grey);
+}
+
+header .img {
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  padding: 0.5rem ;
+  background: var(--pink);
+  color: #fff;
+}
+
+main {
+  width: 100vw;
+  padding: 2rem 1.5rem;
+  background: var(--main-bg);
+}
+
+main .text {
+  font-family: 'Palanquin', sans-serif;
+  max-width: 33.3rem;
+  font-size: clamp(1.2rem, 0.9rem + 1vw, 1.5rem);
+  line-height: 1.6rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+main .products {
+  width: 100%;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+main .product {
+  width: 100%;
+  max-width: 31.25rem;
+  position: relative;
+}
+
+main .product img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 31.25rem;
+  animation: bottomtop 400ms linear;
+}
+
+@keyframes bottomtop {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateY(0);
+  }
+}
+
+main .product span {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  opacity: 0;
+  animation: topdown 400ms 200ms linear forwards reverse;
+  color: var(--purple);
+  background: var(--product-name-bg);
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 100;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}
